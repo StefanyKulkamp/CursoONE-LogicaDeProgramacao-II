@@ -494,61 +494,83 @@ var pincel = tela.getContext("2d");
 
 //#endregion
 
-//#region Exercício
+//#region Exercício Quadro de Desenho
 
-pincel.fillStyle = "lightgray";
-pincel.fillRect(0, 0, 600, 400);
+// pincel.fillStyle = "lightgray";
+// pincel.fillRect(0, 0, 600, 400);
 
-function DesenhaQuadrado(x, y, tamanho, cor) {
-  pincel.fillStyle = cor;
-  pincel.fillRect(x, y, tamanho, tamanho);
-  pincel.fill();
-}
+// function DesenhaQuadrado(x, y, tamanho, cor) {
+//   pincel.fillStyle = cor;
+//   pincel.fillRect(x, y, tamanho, tamanho);
+//   pincel.fill();
+// }
 
-function DesenhaCirculo(x, y, raio, cor) {
-  pincel.fillStyle = cor;
-  pincel.beginPath();
-  pincel.arc(x, y, raio, 0, 2 * 3.14);
-  pincel.fill();
-}
+// function DesenhaCirculo(x, y, raio, cor) {
+//   pincel.fillStyle = cor;
+//   pincel.beginPath();
+//   pincel.arc(x, y, raio, 0, 2 * 3.14);
+//   pincel.fill();
+// }
 
-function DesenhaPaletaDeCores() {
-  DesenhaQuadrado(xVermelho, yQuadrados, tamanhoQuadrados, "red");
-  DesenhaQuadrado(xVerde, yQuadrados, tamanhoQuadrados, "green");
-  DesenhaQuadrado(xAzul, yQuadrados, tamanhoQuadrados, "blue");
-}
+// function DesenhaPaletaDeCores() {
+//   DesenhaQuadrado(xVermelho, yQuadrados, tamanhoQuadrados, "red");
+//   DesenhaQuadrado(xVerde, yQuadrados, tamanhoQuadrados, "green");
+//   DesenhaQuadrado(xAzul, yQuadrados, tamanhoQuadrados, "blue");
+// }
 
-function LidaComMovimentoDoMouse(evento) {
-  var x = evento.pageX - tela.offsetLeft;
-  var y = evento.pageY - tela.offsetTop;
+// function LidaComMovimentoDoMouse(evento) {
+//   var x = evento.pageX - tela.offsetLeft;
+//   var y = evento.pageY - tela.offsetTop;
 
-  if (desenha) {
-    DesenhaCirculo(x, y, 5, corAtual);
-  }
-}
+//   if (desenha && AreaPermitida(x, y)) {
+//     DesenhaCirculo(x, y, 5, corAtual);
+//   }
+// }
 
-function HabilitaDesenhar() {
-  desenha = true;
-}
+// function HabilitaDesenhar() {
+//   desenha = true;
+// }
 
-function DesabilitaDesenhar() {
-  desenha = false;
-}
+// function DesabilitaDesenhar() {
+//   desenha = false;
+// }
 
-var desenha = false;
-var corAtual = "blue";
-var xVermelho = 0;
-var xVerde = 50;
-var xAzul = 100;
-var yQuadrados = 0;
-var tamanhoQuadrados = 50;
+// var desenha = false;
+// var corAtual = "blue";
+// var xVermelho = 0;
+// var xVerde = 50;
+// var xAzul = 100;
+// var yQuadrados = 0;
+// var tamanhoQuadrados = 50;
 
-DesenhaPaletaDeCores(); // mostra os quadrados de seleção de cores
+// function AreaPermitida(x, y) {
+//   if (x >= 0 && x < 3 * tamanhoQuadrados && y >= 0 && y < tamanhoQuadrados) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+// }
 
-tela.onmousemove = LidaComMovimentoDoMouse;
+// function SelecionaCor(evento) {
+//   var x = evento.pageX - tela.offsetLeft;
+//   var y = evento.pageY - tela.offsetTop;
 
-tela.onmousedown = HabilitaDesenhar;
+//   if (y > yQuadrados && y < yQuadrados + tamanhoQuadrados) {
+//     if (x > xVermelho && x < xVermelho + tamanhoQuadrados) {
+//       corAtual = "red";
+//     } else if (x > xVerde && x < xVerde + tamanhoQuadrados) {
+//       corAtual = "green";
+//     } else if (x > xAzul && x < xAzul + tamanhoQuadrados) {
+//       corAtual = "blue";
+//     }
+//   }
+// }
 
-tela.onmouseup = DesabilitaDesenhar;
+// DesenhaPaletaDeCores();
+
+// tela.onclick = SelecionaCor;
+// tela.onmousemove = LidaComMovimentoDoMouse;
+// tela.onmousedown = HabilitaDesenhar;
+// tela.onmouseup = DesabilitaDesenhar;
 
 //#endregion
